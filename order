@@ -39,3 +39,17 @@ public class OrderN{
       for(int i=0; i<items.length; i++){
          if (inputFile.hasNext()) {
             String line = inputFile.nextLine();
+            items[i] = line; 
+         }
+      }
+      
+        inputFile.close();       
+       }//end readFile
+       public static void processFile (){
+         String[]split="String, double , int".split(",");
+         System.out.println( split[0],split[1],split[2]);
+  
+
+   
+   }//end processFile
+}
