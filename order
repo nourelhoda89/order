@@ -1,0 +1,41 @@
+//**************************************************************
+//Program:  order
+//Date:1/24/2017
+//Author: Nourelhoda Farhat 
+//**************************************************************
+
+import java.io.*;
+import java.util.*;
+ 
+public class OrderN{
+   public static void main(String[] args)throws IOException{
+      String[] items =new String[];
+    
+      if(args.length < 1) {
+         System.err.println("Usage: java Calculator <order> <order>...");
+         System.exit(1);
+      }
+      //test to see array
+      readFile(items);
+      for (int i=0 ;i<items.length;i++){
+      
+         System.out.println(items[i]);
+      }
+     processFile();
+   }//end main
+   public static void readFile(String[] items) throws IOException {
+   
+      Scanner keyboard = new Scanner(System.in);
+   
+      // Get the filename.
+      System.out.print("Enter the filename: ");
+      String filename = keyboard.nextLine();
+   
+      // Open the file.
+      File file = new File(filename);
+      Scanner inputFile = new Scanner(file);
+   
+      // Read lines from the file until no more are left and store in array
+      for(int i=0; i<items.length; i++){
+         if (inputFile.hasNext()) {
+            String line = inputFile.nextLine();
